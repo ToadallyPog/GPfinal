@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour
 
     bool spaceBarDown = false;
 
-    float jumpspeed = 8.0f;
+    float jumpspeed = 10.0f;
     float movespeed = 5.0f;
     Rigidbody2D rb;
     float xdirection = 0.0f;
@@ -54,4 +54,11 @@ public class playermovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEXIT2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isgrounded = false;
+        }
+    }
 }
