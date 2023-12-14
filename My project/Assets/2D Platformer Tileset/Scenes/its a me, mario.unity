@@ -2170,6 +2170,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5784720133922895636, guid: 8d54567fd1820184d89c3f18eb42e7c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784720133922895636, guid: 8d54567fd1820184d89c3f18eb42e7c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.33
       objectReference: {fileID: 0}
@@ -2222,6 +2226,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5299545664942931935, guid: 8d54567fd1820184d89c3f18eb42e7c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2022587830}
+    - targetCorrespondingSourceObject: {fileID: 5299545664942931935, guid: 8d54567fd1820184d89c3f18eb42e7c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022587831}
   m_SourcePrefab: {fileID: 100100000, guid: 8d54567fd1820184d89c3f18eb42e7c2, type: 3}
 --- !u!1001 &1170076731
 PrefabInstance:
@@ -2348,6 +2355,27 @@ MonoBehaviour:
   arrowspawnpoint: {fileID: 153711960}
   arrowprefab: {fileID: 3323965283003261512, guid: 5536613364fcb7a41bcab6996c3a4fba, type: 3}
   arrowspeed: 10
+--- !u!95 &2022587831
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022587824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b0607408bcb0a84d8162894bd2ba2a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2607861775755353840
 PrefabInstance:
   m_ObjectHideFlags: 0
