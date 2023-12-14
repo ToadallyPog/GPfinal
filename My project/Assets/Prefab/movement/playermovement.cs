@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
@@ -14,7 +14,13 @@ public class playermovement : MonoBehaviour
     Rigidbody2D rb;
     float xdirection = 0.0f;
     bool isgrounded = false;
-    
+
+
+    private void Awake()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,13 @@ public class playermovement : MonoBehaviour
         }
 
         xdirection = Input.GetAxisRaw("Horizontal");
+        if(xdirection > 0) {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (xdirection < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
 
@@ -51,7 +64,15 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
+        }else if (collision.gameObject.CompareTag("spike"))
+        {
+            GameManager.Instance.healthPoints -= 1;
+            if(GameManager.Instance.healthPoints < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -59,6 +80,9 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = false;
+            GameManager.Instance.healthPoints -= 1;
+           
+            
         }
     }
 }
