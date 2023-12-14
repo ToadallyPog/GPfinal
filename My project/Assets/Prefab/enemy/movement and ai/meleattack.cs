@@ -18,12 +18,12 @@ public class meleattack : MonoBehaviour
     //References
     private Animator anim;
    // private Health playerHealth;
-   // private EnemyPatrol enemyPatrol;
+    private enemypatrol enemyPatrol;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        enemyPatrol = GetComponentInParent<enemypatrol>();
     }
 
     private void Update()
@@ -40,8 +40,11 @@ public class meleattack : MonoBehaviour
             }
         }
 
-      //  if (enemyPatrol != null)
-        //    enemyPatrol.enabled = !PlayerInSight();
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = !PlayerInSight();
+        }
+
     }
 
     private bool PlayerInSight()
