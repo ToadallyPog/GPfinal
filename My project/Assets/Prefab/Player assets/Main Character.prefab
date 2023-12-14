@@ -14,8 +14,12 @@ GameObject:
   - component: {fileID: 3354843320602389863}
   - component: {fileID: 9054122303664802383}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: -954384477674506631}
   m_Layer: 7
+=======
+  m_Layer: 0
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
 =======
   m_Layer: 0
 >>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
@@ -167,6 +171,7 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!61 &-954384477674506631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212,5 +217,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9456711, y: 1.407294}
   m_EdgeRadius: 0
+=======
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
 =======
 >>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')

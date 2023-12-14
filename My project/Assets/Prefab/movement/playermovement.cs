@@ -15,6 +15,7 @@ public class playermovement : MonoBehaviour
     float xdirection = 0.0f;
     bool isgrounded = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     private void Awake()
@@ -22,6 +23,9 @@ public class playermovement : MonoBehaviour
         
     }
 
+=======
+    
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
 =======
     
 >>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
@@ -69,6 +73,7 @@ public class playermovement : MonoBehaviour
         {
             isgrounded = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
         }else if (collision.gameObject.CompareTag("spike"))
         {
             GameManager.Instance.healthPoints -= 1;
@@ -76,6 +81,8 @@ public class playermovement : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+=======
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
 =======
 >>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
         }

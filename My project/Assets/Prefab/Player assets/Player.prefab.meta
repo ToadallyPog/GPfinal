@@ -1,8 +1,16 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 9b5f20196642e9742acc0cd2513b1f57
 =======
 guid: 8d54567fd1820184d89c3f18eb42e7c2
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
+=======
+<<<<<<<< HEAD:My project/Assets/Prefab/Player assets/Ice parallax.prefab.meta
+guid: c826846bd611af441a091d2df83ebaff
+========
+guid: 8d54567fd1820184d89c3f18eb42e7c2
+>>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets'):My project/Assets/Prefab/Player assets/Player.prefab.meta
 >>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
 PrefabImporter:
   externalObjects: {}
