@@ -5,7 +5,7 @@ public class meleattack : MonoBehaviour
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] private float damage;
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
@@ -17,7 +17,7 @@ public class meleattack : MonoBehaviour
 
     //References
     private Animator anim;
-   // private Health playerHealth;
+    private playerhealth playerHealth;
     private enemypatrol enemyPatrol;
 
     private void Awake()
@@ -54,8 +54,10 @@ public class meleattack : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-        //if (hit.collider != null)
-          //  playerHealth = hit.transform.GetComponent<Health>();
+        if (hit.collider != null)
+        {
+            playerHealth = hit.transform.GetComponent<playerhealth>();
+        }
 
         return hit.collider != null;
     }
@@ -68,7 +70,9 @@ public class meleattack : MonoBehaviour
 
     private void DamagePlayer()
     {
-      //  if (PlayerInSight())
-         //   playerHealth.TakeDamage(damage);
+        if (PlayerInSight())
+        {
+            playerHealth.TakeDamage(damage);
+        }
     }
 }
