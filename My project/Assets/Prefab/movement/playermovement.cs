@@ -14,6 +14,7 @@ public class playermovement : MonoBehaviour
     Rigidbody2D rb;
     float xdirection = 0.0f;
     bool isgrounded = false;
+<<<<<<< HEAD
 
 
     private void Awake()
@@ -21,6 +22,9 @@ public class playermovement : MonoBehaviour
         
     }
 
+=======
+    
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +68,7 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
+<<<<<<< HEAD
         }else if (collision.gameObject.CompareTag("spike"))
         {
             GameManager.Instance.healthPoints -= 1;
@@ -71,6 +76,8 @@ public class playermovement : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+=======
+>>>>>>> parent of d4c46eb (Merge branch 'player-and-enemy-assets')
         }
 
     }
