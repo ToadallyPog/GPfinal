@@ -7,6 +7,10 @@ TagManager:
   - ground
   - enemy
   - arrow
+<<<<<<< HEAD
+=======
+  - spike
+>>>>>>> c81a140ce488506dd271aa98c28438ec4038f4f1
   layers:
   - Default
   - TransparentFX

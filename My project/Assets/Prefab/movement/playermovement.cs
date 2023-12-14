@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
@@ -9,18 +9,16 @@ public class playermovement : MonoBehaviour
 
     bool spaceBarDown = false;
 
-    float jumpspeed = 10.0f;
-    float movespeed = 5.0f;
+    float jumpspeed = 12.0f;
+    float movespeed = 9.0f;
     Rigidbody2D rb;
     float xdirection = 0.0f;
-    float ydirection = 0.0f;
     bool isgrounded = false;
-    private Animator anim;
+
 
     private void Awake()
     {
-        //references for animator
-        anim = GetComponent<Animator>();
+        
     }
 
     // Start is called before the first frame update
@@ -48,8 +46,6 @@ public class playermovement : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        anim.SetBool("run", xdirection != 0);
     }
 
 
@@ -58,8 +54,6 @@ public class playermovement : MonoBehaviour
         rb.velocity = new Vector2(xdirection * movespeed,rb.velocity.y);
         if (spaceBarDown)
         {
-            anim.SetBool("jump", ydirection > 0);
-           
             spaceBarDown = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
         }
@@ -70,8 +64,15 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
-            
+        }else if (collision.gameObject.CompareTag("spike"))
+        {
+            GameManager.Instance.healthPoints -= 1;
+            if(GameManager.Instance.healthPoints < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -79,6 +80,9 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = false;
+            GameManager.Instance.healthPoints -= 1;
+           
+            
         }
     }
 }
