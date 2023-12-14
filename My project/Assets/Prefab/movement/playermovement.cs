@@ -13,8 +13,16 @@ public class playermovement : MonoBehaviour
     float movespeed = 5.0f;
     Rigidbody2D rb;
     float xdirection = 0.0f;
+    float ydirection = 0.0f;
     bool isgrounded = false;
-    
+    private Animator anim;
+
+    private void Awake()
+    {
+        //references for animator
+        anim = GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +48,8 @@ public class playermovement : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
+
+        anim.SetBool("run", xdirection != 0);
     }
 
 
@@ -48,6 +58,8 @@ public class playermovement : MonoBehaviour
         rb.velocity = new Vector2(xdirection * movespeed,rb.velocity.y);
         if (spaceBarDown)
         {
+            anim.SetBool("jump", ydirection > 0);
+           
             spaceBarDown = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
         }
@@ -58,6 +70,7 @@ public class playermovement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
+            
         }
     }
 

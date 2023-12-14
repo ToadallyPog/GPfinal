@@ -67,4 +67,6 @@ public class playerhealth : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
     }
+
+  
 }
