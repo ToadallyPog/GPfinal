@@ -42,7 +42,7 @@ public class sceneSwapper : MonoBehaviour
                     reqLevelComplete = GlobalsController.mineTwoComplete;
                     break;
                 case "_icey cave":
-                    reqLevelComplete = GlobalsController.iceTwoComplete;
+                    //reqLevelComplete = GlobalsController.iceCaveComplete;
                     break;
                 default:
                     reqLevelComplete = false;
