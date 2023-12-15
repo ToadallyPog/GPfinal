@@ -1,9 +1,17 @@
+using System;
 using UnityEngine;
 
 public class enemypatrol : MonoBehaviour
 {
     public GameObject player;
     private float distance;
+
+    private float snapshotX;
+    private int stuckcount = 0;
+
+    Rigidbody2D rb;
+
+
     [Header("Patrol Points")]
     [SerializeField] private Transform leftedge;
     [SerializeField] private Transform rightedge;
@@ -31,6 +39,24 @@ public class enemypatrol : MonoBehaviour
     private void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
+        if (Math.Floor(transform.position.x) == Math.Floor(snapshotX))
+        {
+
+            stuckcount++;
+            Debug.Log(stuckcount + "enemy");
+            if (stuckcount >= 10)
+            {
+                //transform.position = new Vector2(transform.position.x-5, transform.position.y);
+                //transform.position = new Vector2(transform.position.x-.1f, transform.position.y+.1f);
+                rb.velocity = new Vector2(2, 10);
+                stuckcount = 0;
+            }
+        }
+        else
+        {
+            stuckcount = 0;
+        }
+        snapshotX = transform.position.x;
         if (distance < 10)
         {
             Vector2 direction = player.transform.position - transform.position;

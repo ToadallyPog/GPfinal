@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5289726013169428006}
   - component: {fileID: 2733646728265361351}
   - component: {fileID: 5603226548985781523}
+  - component: {fileID: 4845406339510421654}
   m_Layer: 0
   m_Name: Boss Skeleton
   m_TagString: Untagged
@@ -179,3 +180,23 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4845406339510421654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799182606093500749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75626cbe5afc6bf4ea1824877ec9486e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  leftedge: {fileID: 0}
+  rightedge: {fileID: 0}
+  enemy: {fileID: 0}
+  speed: 0
+  jumpspeed: 0
+  idleduration: 0
+  anim: {fileID: 0}
