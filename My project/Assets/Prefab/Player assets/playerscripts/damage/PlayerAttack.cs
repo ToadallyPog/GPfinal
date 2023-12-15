@@ -1,39 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float attackcooldown;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform arrowspawn;
+    [SerializeField] private GameObject[] arrow;
+
     private Animator anim;
-    private playermovement PlayerMovement;
-    private float cooldowntimer = Mathf.Infinity;
+    private playermovement playerMovement;
+    private float cooldownTimer = Mathf.Infinity;
 
     private void Awake()
     {
-        anim.GetComponent<Animator>();
-        PlayerMovement = GetComponent<playermovement>();
+        anim = GetComponent<Animator>();
+        playerMovement = GetComponent<playermovement>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-         if (Input.GetMouseButton(0) && cooldowntimer > attackcooldown && PlayerMovement.canAttack())
+        if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
             Attack();
 
-        cooldowntimer += Time.deltaTime;
-
+        cooldownTimer += Time.deltaTime;
     }
 
     private void Attack()
     {
         anim.SetTrigger("attack");
-        cooldowntimer = 0;
+        cooldownTimer = 0;
+
+        arrow[0].transform.position = arrowspawn.position;
+        arrow[0].GetComponent<projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
+    
 }
