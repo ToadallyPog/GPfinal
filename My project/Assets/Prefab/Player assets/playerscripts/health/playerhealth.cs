@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -58,10 +59,24 @@ public class playerhealth : MonoBehaviour
                 }
 
                 dead = true;
-                
-                SceneManager.LoadScene("gameover");
+
+                if (CompareTag("Player"))
+                {
+
+                    SceneManager.LoadScene("gameover");
+                }
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("spike") && this.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("gameover");
+        }
+
+        
     }
     public void AddHealth(float value)
     {

@@ -9,7 +9,7 @@ public class playermovement : MonoBehaviour
 
     bool spaceBarDown = false;
 
-    float jumpspeed = 10.0f;
+    float jumpspeed = 12.0f;
     float movespeed = 5.0f;
     Rigidbody2D rb;
     float xdirection = 0.0f;
