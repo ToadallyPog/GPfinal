@@ -19,8 +19,7 @@ public class playermovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
 
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask wallLayer;
+   
 
     private void Awake()
     {
@@ -87,13 +86,8 @@ public class playermovement : MonoBehaviour
         }
     }
 
-        private bool onWall()
-    {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
-        return raycastHit.collider != null;
-    }
     public bool canAttack()
     {
-        return xdirection == 0  && !onWall();
+        return xdirection == 0;
     }
 }
