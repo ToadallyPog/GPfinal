@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerhealth : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class playerhealth : MonoBehaviour
                     component.enabled = false;
 
                 dead = true;
+                
+                SceneManager.LoadScene("gameover");
             }
         }
     }
