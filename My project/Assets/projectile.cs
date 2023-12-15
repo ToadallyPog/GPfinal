@@ -36,6 +36,7 @@ public class projectile : MonoBehaviour
         if(collision.tag == "enemy")
         {
             collision.GetComponent<playerhealth>().TakeDamage(1);
+            Destroy(this.gameObject);
         }
         
     }

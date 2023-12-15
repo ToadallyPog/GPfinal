@@ -39,7 +39,7 @@ public class playerhealth : MonoBehaviour
         {
             if (!dead)
             {
-                anim.SetTrigger("die");
+                anim.SetTrigger("death");
 
                 //Deactivate all attached component classes
                 if (GetComponent<playermovement>() != null)
@@ -79,5 +79,9 @@ public class playerhealth : MonoBehaviour
         invulnerable = false;
     }
 
-  
+    private void OnDestroy()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
