@@ -40,11 +40,22 @@ public class playerhealth : MonoBehaviour
         {
             if (!dead)
             {
-                anim.SetTrigger("die");
+                anim.SetTrigger("death");
 
                 //Deactivate all attached component classes
-                foreach (Behaviour component in components)
-                    component.enabled = false;
+                if (GetComponent<playermovement>() != null)
+                {
+                    GetComponent<playermovement>().enabled = false;
+                }
+
+                if (GetComponent<enemypatrol>() != null)
+                {
+                    GetComponent<enemypatrol>().enabled = false;
+                }
+                if (GetComponent<meleattack>() != null)
+                {
+                    GetComponent<meleattack>().enabled = false;
+                }
 
                 dead = true;
                 
@@ -71,5 +82,9 @@ public class playerhealth : MonoBehaviour
         invulnerable = false;
     }
 
-  
+    private void OnDestroy()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

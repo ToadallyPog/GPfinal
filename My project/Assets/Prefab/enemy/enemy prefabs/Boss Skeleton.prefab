@@ -13,10 +13,13 @@ GameObject:
   - component: {fileID: 5289726013169428006}
   - component: {fileID: 2733646728265361351}
   - component: {fileID: 5603226548985781523}
-  - component: {fileID: 4845406339510421654}
-  m_Layer: 0
+  - component: {fileID: -7156934143341228025}
+  - component: {fileID: 3487222675018232553}
+  - component: {fileID: 2732192735527997871}
+  - component: {fileID: 3109001100730612464}
+  m_Layer: 7
   m_Name: Boss Skeleton
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4854, y: 2.25, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: -2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -159,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5603226548985781523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,15 +175,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fb7cf88fab4364a847c8b7fd0660f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0
-  range: 1.5
-  damage: 0
-  colliderDistance: 1
+  attackCooldown: 2
+  range: 1.59
+  damage: 3
+  colliderDistance: 1.5
   boxCollider: {fileID: 5289726013169428006}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &4845406339510421654
+--- !u!114 &-7156934143341228025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,14 +192,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 6799182606093500749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75626cbe5afc6bf4ea1824877ec9486e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca8065abdad957e4fb2b370de6c0b1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  leftedge: {fileID: 0}
-  rightedge: {fileID: 0}
-  enemy: {fileID: 0}
-  speed: 0
-  jumpspeed: 0
-  idleduration: 0
-  anim: {fileID: 0}
+  startingHealth: 1
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components: []
+--- !u!114 &3487222675018232553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799182606093500749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37358a8aa99b16042ba8253075ae2d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+--- !u!95 &2732192735527997871
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799182606093500749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bd89f63d6a1a984dbe8ab8a1335b7f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3109001100730612464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6799182606093500749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8065abdad957e4fb2b370de6c0b1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components: []

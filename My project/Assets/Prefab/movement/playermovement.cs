@@ -16,6 +16,10 @@ public class playermovement : MonoBehaviour
     float ydirection = 0.0f;
     bool isgrounded = false;
     private Animator anim;
+    private BoxCollider2D boxCollider;
+    private float wallJumpCooldown;
+
+   
 
     private void Awake()
     {
@@ -80,5 +84,10 @@ public class playermovement : MonoBehaviour
         {
             isgrounded = false;
         }
+    }
+
+    public bool canAttack()
+    {
+        return xdirection == 0;
     }
 }
