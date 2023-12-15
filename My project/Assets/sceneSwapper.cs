@@ -35,6 +35,21 @@ public class sceneSwapper : MonoBehaviour
                 case "Hub World":
                     reqLevelComplete = GlobalsController.defaultComplete;
                     break;
+                case "playerNameSelect":
+                    reqLevelComplete = GlobalsController.defaultComplete;
+                    break;
+                case "_forestOne":
+                    reqLevelComplete = GlobalsController.defaultComplete;
+                    break;
+                case "_forestTwo":
+                    reqLevelComplete = GlobalsController.forestOneComplete;
+                    break;
+                case "_mineOne":
+                    reqLevelComplete = GlobalsController.forestCaveComplete;
+                    break;
+                case "_mineTwo":
+                    reqLevelComplete = GlobalsController.mineOneComplete;
+                    break;
                 case "_wild forest cave":
                     reqLevelComplete = GlobalsController.forestTwoComplete;
                     break;
@@ -42,7 +57,7 @@ public class sceneSwapper : MonoBehaviour
                     reqLevelComplete = GlobalsController.mineTwoComplete;
                     break;
                 case "_icey cave":
-                    //reqLevelComplete = GlobalsController.iceCaveComplete;
+                    reqLevelComplete = GlobalsController.mineCaveComplete;
                     break;
                 default:
                     reqLevelComplete = false;

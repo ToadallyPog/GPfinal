@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlobalsController : MonoBehaviour
 {
     public static bool defaultComplete = true,
-                        forestOneComplete = false, forestTwoComplete = false, forstCaveComplete = false,
+                        forestOneComplete = false, forestTwoComplete = false, forestCaveComplete = false,
                         mineOneComplete = false, mineTwoComplete = false, mineCaveComplete = false,
                         IceCaveComplete = false;
 
