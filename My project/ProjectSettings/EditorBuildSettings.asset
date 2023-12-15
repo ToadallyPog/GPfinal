@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/_forestOne.unity
+    guid: beba196040c9f0e4087f199f8f4eaa43
+  - enabled: 1
+    path: Assets/Scenes/_forestTwo.unity
+    guid: 3e9eacb2abb412447abf06713c129c14
+  - enabled: 1
+    path: Assets/Scenes/_mineOne.unity
+    guid: dc3596f36cb018e47ba451b1431f479c
+  - enabled: 1
+    path: Assets/Scenes/gameover.unity
+    guid: 2790088c287d8664c801b84b8c4bdade
+  - enabled: 1
     path: Assets/Scenes/_icey cave.unity
     guid: 7f8d9627eac33ff4c85a584ea8bd3b72
   - enabled: 1
@@ -20,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hub World.unity
     guid: 5f017891a74f36e40867d32030314f0f
+  - enabled: 1
+    path: Assets/Scenes/_mineTwo.unity
+    guid: 346b2bb5b2d159a4981df79f7d3ef7bc
+  - enabled: 1
+    path: Assets/Scenes/start.unity
+    guid: 6070065909f0367479a977d61e5e5027
   m_configObjects: {}
