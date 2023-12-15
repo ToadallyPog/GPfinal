@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +9,9 @@ public class sceneSwapper : MonoBehaviour
 {
 
     public string scenename;
+    private bool reqLevelComplete;
+
+    
 
 
 
@@ -26,7 +31,27 @@ public class sceneSwapper : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(scenename);
+            switch (scenename) {
+                case "Hub World":
+                    reqLevelComplete = GlobalsController.defaultComplete;
+                    break;
+                case "_wild forest cave":
+                    reqLevelComplete = GlobalsController.forestTwoComplete;
+                    break;
+                case "_lost mine cave":
+                    reqLevelComplete = GlobalsController.mineTwoComplete;
+                    break;
+                case "_icey cave":
+                    reqLevelComplete = GlobalsController.iceTwoComplete;
+                    break;
+                default:
+                    reqLevelComplete = false;
+                    
+                    break;
+            }
+
+            if (reqLevelComplete)
+                SceneManager.LoadScene(scenename);
         }
     }
 }
